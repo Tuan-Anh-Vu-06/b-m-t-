@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang 2</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 80px;
+            background-color: #FFE4E1; /* Màu nền trang */
+        }
+
+        #headerImage {
+            width: 300px;       /* Kích thước ảnh */
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 20px;
+            color: #333;
+        }
+
+        input[type="time"] {
+            padding: 10px;
+            font-size: 18px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px 25px;
+            font-size: 18px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Ảnh hiển thị trên đầu trang -->
+    <img id="headerImage" src="c7e9832c-7d4b-49c9-9367-ae8ee0f02284.gif" alt="Ảnh Trang 2">
+
+    <!-- Dòng hỏi thời gian -->
+    <label for="timeInput">Mấy giờ em rảnh dọ???</label>
+
+    <!-- Ô nhập thời gian -->
+    <input type="time" id="timeInput" name="timeInput">
+
+    <br>
+
+    <!-- Nút chuyển sang Trang 3 -->
+    <button onclick="goToTrang3()">Tiếp tục</button>
+
+    <script>
+        function goToTrang3() {
+            const time = document.getElementById('timeInput').value;
+            localStorage.setItem('chonThoiGian', time);
+            window.location.href = 'trang3.html';
+            localStorage.setItem('thoiGianDiChoi', time);
+        }
+    </script>
+
+
+</body>
+</html>

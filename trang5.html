@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Trang 5 - Thống kê</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #FFE4F0;
+        text-align: center;
+        padding: 40px;
+    }
+
+    h1 {
+        color: #D6006F;
+        margin-bottom: 30px;
+    }
+
+    .box {
+        width: 450px;
+        margin: auto;
+        background: white;
+        padding: 25px;
+        border-radius: 15px;
+        box-shadow: 0 0 15px #e7a8c7;
+        text-align: left;
+        font-size: 18px;
+    }
+
+    .title {
+        font-size: 20px;
+        font-weight: bold;
+        margin-top: 20px;
+        color: #FF3E9E;
+    }
+
+    ul {
+        margin-left: 20px;
+        margin-top: 5px;
+    }
+</style>
+</head>
+<body>
+
+<h1>💗 Bảng Thống Kê Tổng Hợp 💗</h1>
+
+<div class="box">
+
+    <!-- THỜI GIAN -->
+    <p class="title">⏰ Thời gian em chọn:</p>
+    <p id="time"></p>
+
+    <!-- MÓN CHÍNH -->
+    <p class="title">🍜 Các món ăn chính em chọn:</p>
+    <ul id="monList"></ul>
+
+    <!-- MÓN ĂN NHẸ -->
+    <p class="title">🍰 Các món ăn nhẹ em chọn:</p>
+    <ul id="snackList"></ul>
+
+</div>
+
+<script>
+    // Lấy dữ liệu
+    const time = localStorage.getItem("thoiGianDiChoi") || "Không chọn";
+
+    const monArray = JSON.parse(localStorage.getItem("monDaChon")) || [];
+    const snackArray = JSON.parse(localStorage.getItem("snackDaChon")) || [];
+
+    // Gán thời gian
+    document.getElementById("time").textContent = time;
+
+    // Gán món chính
+    const monList = document.getElementById("monList");
+    if (monArray.length === 0) {
+        monList.innerHTML = "<li>Không chọn món nào</li>";
+    } else {
+        monArray.forEach(m => {
+            let li = document.createElement("li");
+            li.textContent = m;
+            monList.appendChild(li);
+        });
+    }
+
+    // Gán snack
+    const snackList = document.getElementById("snackList");
+    if (snackArray.length === 0) {
+        snackList.innerHTML = "<li>Không chọn món nào</li>";
+    } else {
+        snackArray.forEach(s => {
+            let li = document.createElement("li");
+            li.textContent = s;
+            snackList.appendChild(li);
+        });
+    }
+</script>
+
+</body>
+</html>

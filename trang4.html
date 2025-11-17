@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang 4</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #FFE4E1;
+            padding: 40px;
+        }
+
+        h1 {
+            font-size: 26px;
+            margin-bottom: 30px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+        }
+
+        .item {
+            width: 150px;
+            text-align: center;
+        }
+
+        .item img {
+            width: 130px;
+            height: 130px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid #FF69B4;
+            transition: 0.3s;
+        }
+
+        .item img:hover {
+            transform: scale(1.07);
+        }
+
+        button {
+            margin-top: 30px;
+            padding: 12px 30px;
+            font-size: 18px;
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        button:hover {
+            background-color: #3e8e41;
+        }
+    </style>
+
+</head>
+<body>
+
+    <h1>Sau đó ngiu muốn đi đâu ạaa</h1>
+
+    <div class="container">
+        <!-- 7 món -->
+        <div class="item">
+            <img src="84a31f12-de2b-432e-a7e1-79f79037c906.jpg">
+            <br>
+            <input type="checkbox"> Thóc
+        </div>
+
+        <div class="item">
+            <img src="34190afe-280f-4ecd-84d6-f542f7d8c943.jpg">
+            <br>
+            <input type="checkbox"> Viki
+        </div>
+
+        <div class="item">
+            <img src="4231fd53-bac2-4e74-9f1d-09e69a94bfbd.jpg">
+            <br>
+            <input type="checkbox"> Chè
+        </div>
+
+        <div class="item">
+            <img src="c442dcd5-b121-4f65-a13d-0ccf1f398e26.jpg">
+            <br>
+            <input type="checkbox"> Kem
+        </div>
+
+        <div class="item">
+            <img src="tao-pho-da-nang-2.jpg">
+            <br>
+            <input type="checkbox"> Tào phớ
+        </div>
+
+        <div class="item">
+            <img src="6cef5f4c-5639-4940-aa86-0d6ab0004be8.jpg">
+            <br>
+            <input type="checkbox"> Bánh mì nướng
+        </div>
+
+        <div class="item">
+            <img src="6ad139d7-0835-40a3-a2be-b87499b01872.jpg">
+            <br>
+            <input type="checkbox"> Bân xiển 
+        </div>
+
+        <div class="item">
+            <img src="4e6455ec-0349-48eb-be90-88c15c84c586.jpg">
+            <br>
+            <input type="checkbox"> Xem phim
+        </div>
+
+        <div class="item">
+            <img src="3f53876f-c0ff-404c-8091-525faef76dc6.jpg">
+            <br>
+            <input type="checkbox"> Dạo hồ Gươm
+        </div>
+
+        <div class="item">
+            <img src="c764d68b-368d-48fc-9ecf-9d521cc4cab2.jpg">
+            <br>
+            <input type="checkbox"> Chill hồ Tây
+        </div>
+
+    </div>
+
+    <button onclick="goToPage5()">Tiếp tục</button>
+
+    <script>
+    function goToPage5() {
+        const checkboxes = document.querySelectorAll(".item input[type='checkbox']");
+        const labels = [
+            "Thóc",
+            "Viki",
+            "Chè",
+            "Kem",
+            "Tào phớ",
+            "Bánh mì nướng",
+            "Bân xiển",
+            "Xem phim",
+            "Dạo hồ Gươm",
+            "Chill hồ Tây"
+        ];
+
+        let selected = [];
+
+        checkboxes.forEach((cb, index) => {
+            if (cb.checked) {
+                selected.push(labels[index]); // Lưu đúng tên món
+            }
+        });
+
+        // Lưu vào localStorage
+        localStorage.setItem("snackDaChon", JSON.stringify(selected));
+
+        // Chuyển trang
+        window.location.href = "trang5.html";
+    }
+</script>
+
+
+</body>
+</html>
